@@ -1,0 +1,10 @@
+Package: converge
+Type: Package
+Title: CONVErsion tools in R for GEnomic data
+Version: 0.1
+Date: 2015-09-27
+Author: Daniel Vera vera@genomics.fsu.edu
+Maintainer: Daniel Vera <vera@genomics.fsu.edu>
+Description: A suite of tools to convert between genomic file formats.
+Depends: gplots, parallel, tools, gtools
+License: MIT Lisence
