@@ -1,4 +1,4 @@
-sra.2.fastq <- function( srafiles, paired=FALSE ){
+sraToFastq <- function( srafiles, paired=FALSE ){
 	arguments<-""
 	outnames <- paste0(removeext(srafiles),".fastq")
 	if(paired==TRUE){arguments<-"--split-3"}

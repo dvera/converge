@@ -1,4 +1,4 @@
-gff.2.bed2<-function(gff){
+gffToBed2<-function(gff){
 	gff<-gff[-which(gff$V3=="gene"),]
 	gff<-gff[-which(gff$V3=="repeat_region"),]
 	ic<-strsplit(gff$V9,";")

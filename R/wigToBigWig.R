@@ -1,4 +1,4 @@
-wig.2.bw <-
+wigToBigWig <-
 function( datafiles,genomefile){
 	outnames <- paste0(basename(removeext(datafiles)),".bw")
 	for(l in 1:length(datafiles)){

@@ -6,14 +6,14 @@
 #' @param genomefile A string specifying the path of the file with chromosome sizes
 #' @param threads A positive integer specifying how many files to process simultaneously.
 
-bed.2.bb <-
+bedToBigBed <-
 function( datafiles , genomefile, threads=getOption("threads",1L) ) {
 
 	outnames<-paste0(basename(removeext(datafiles)),".bb")
 
 	cmdString <- paste( "bedToBigBed", datafiles, genomefile , outnames )
 
-	res <- rage.run(cmdString,threads)
+	res <- cmdRun(cmdString,threads)
 
 	return(outnames)
 }

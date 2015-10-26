@@ -1,4 +1,4 @@
-vcf.2.bed <- function( vcfFiles ){
+vcfToBed <- function( vcfFiles ){
 
 	outnames <- paste0(basename(removeext(vcfFiles)),".bed")
 

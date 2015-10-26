@@ -1,4 +1,4 @@
-bw.2.bg <-
+bigWigToBedGraph <-
 function( datafiles,genomefile){
 	for(l in 1:length(datafiles)){
 		cat(basename(datafiles[l]),": converting to bedGraph\n")

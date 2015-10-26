@@ -1,4 +1,4 @@
-bg.2.wig <- function( bgfiles , span=1 ){
+bedGraphToWig <- function( bgfiles , span=1 ){
 	outnames <- paste0 ( basename ( removeext ( bgfiles) ) , ".wig" )
 	for(l in 1:length(bgfiles)){
 		system(paste(

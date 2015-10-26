@@ -6,14 +6,14 @@
 #' @param threads A positive integer specifying how many bams to process simultaneously.
 
 
-bam.2.sam <-
+bamToSam <-
 function( bamFiles , threads=getOption("threads",1L) ){
 
 	outnames <- paste0(basename(removeext(bamFiles)),".sam")
 
 	cmdString <- paste("samtools view",bamFiles,">",outnames )
 
-	res <- rage.run(cmdString,threads)
+	res <- cmdRun(cmdString,threads)
 
 	return(outnames)
 

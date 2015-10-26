@@ -5,7 +5,7 @@
 #' @param bedfiles A character vector of paths to bed files.
 #' @param threads A positive integer specifying how many files to process simultaneously.
 
-bg.2.bed <-
+bedGraphToBed <-
 function( bgfiles, threads=getOption("threads",1L) ){
 
 	outnames<-paste0(basename(removeext(bgfiles)),".bed")
@@ -14,7 +14,7 @@ function( bgfiles, threads=getOption("threads",1L) ){
 
 	cmdString <- paste0( "awk '{print $1,$2,$3,NR,int($4)}' OFS='\t' ",bgfiles," > ",outnames )
 
-	rage.run(cmdString,threads)
+	cmdRun(cmdString,threads)
 
 	return(outnames)
 }

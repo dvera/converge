@@ -1,4 +1,4 @@
-bw.2.wig <-
+bigWigToWig <-
 function( datafiles,genomefile){
 	for(l in 1:length(datafiles)){
 		cat(basename(datafiles[l]),": converting to wiggle\n")

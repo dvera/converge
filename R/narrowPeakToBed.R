@@ -1,4 +1,4 @@
-np.2.bed <- function ( narrowPeaks , strand = TRUE ){
+narrowPeakToBed <- function ( narrowPeaks , strand = TRUE ){
 
 	outnames <- paste0( basename ( removeext ( narrowPeaks ) ) , ".bed" )
 

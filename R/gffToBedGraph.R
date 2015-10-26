@@ -1,4 +1,4 @@
-gff.2.bg <-
+gffToBedGraph <-
 function( gffs, extendbp=NULL, postsort=TRUE, threads=getOption("threads",1L) ){
 
 	gffnames<-basename(removeext(gffs))
@@ -12,7 +12,7 @@ function( gffs, extendbp=NULL, postsort=TRUE, threads=getOption("threads",1L) ){
 		">",outnames
 	)
 
-	res <- rage.run(cmdString, threads=threads)
+	res <- cmdRun(cmdString, threads=threads)
 	if(postsort){bed.sort(outnames,threads=threads)}
 	return(outnames)
 }

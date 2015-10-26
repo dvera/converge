@@ -7,7 +7,7 @@
 #' @param threads A positive integer specifying how many bams to process simultaneously.
 
 
-sam.2.bam <-
+samToBam <-
 function( samFiles , minQual=NULL , threads=getOption("threads",1L) ){
 	res <- samtools.view(samFiles, threads=threads, minQual=minQual, outputBam=TRUE )
 	return(res)

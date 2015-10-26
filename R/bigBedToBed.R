@@ -5,14 +5,14 @@
 #' @param datafiles A character vector of paths to bigBed files.
 #' @param threads A positive integer specifying how many bams to process simultaneously.
 
-bb.2.bed <-
+bigBedToBed <-
 function( datafiles , threads=getOption("threads",1L) ){
 
 	outnames<-paste0(basename(removeext(datafiles)),".bed")
 
 	cmdString <- paste( paste("bigBedToBed", datafiles, outnames ) )
 
-	res <- rage.run( cmdString, threads )
+	res <- cmdRun( cmdString, threads )
 
 	return(outnames)
 

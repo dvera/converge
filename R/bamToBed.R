@@ -8,7 +8,7 @@
 #' @param cigar A boolean indicating whether to use CIGAR strings as interval names.
 #' @param threads A positive integer specifying how many bams to process simultaneously.
 
-bam.2.bed <-
+bamToBed <-
 function( bamFiles , paired = FALSE , postsort=TRUE , cigar=FALSE , threads=getOption("threads",1L) , sortBuffer="1G" , sortThreads=NULL ){
 
 
@@ -35,7 +35,7 @@ function( bamFiles , paired = FALSE , postsort=TRUE , cigar=FALSE , threads=getO
 	)
 
 	# run commands
-	res <- rage.run(cmdString,threads)
+	res <- cmdRun(cmdString,threads)
 
 	return(outnames)
 }

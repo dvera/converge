@@ -1,4 +1,4 @@
-gff.2.bed <-
+gffToBed <-
 function( gff, extendbp=60, strand=TRUE ){
 	library(gtools)
 	cat("converting",gff,"\n")
