@@ -10,10 +10,10 @@ converge provides a set of R scripts and wrappers to convert between genomic fil
 ## Dependencies
 
 The following dependencies should be installed and available in your $PATH:
-- bedtools >= 2.25
-- samtools >= 1.0
+- bedtools >= 2.25 
+- samtools >= 1.0 (only for sam <-> bam conversion)
 - kent source utils >= v323
-- sra toolkit >= 2.4.5
+- sra toolkit >= 2.4.5 (only for sra -> fastq conversion)
 
 ## List of functions
 
