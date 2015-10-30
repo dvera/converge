@@ -7,15 +7,26 @@ CONVErsion tools in R for GEnomic data
 
 converge provides a set of R scripts and wrappers to convert between genomic file formats.
 
-## Dependencies
+## Installation
 
-The following dependencies should be installed and available in your $PATH:
+Install devtools if not installed already:
+```R
+install.packages("devtools")
+```
+
+Then install conifur (convenience functions for R), then converge:
+```R
+devtools::install_github("dvera/conifur")
+devtools::install_github("dvera/converge")
+```
+
+The following external dependencies should be installed and available in your $PATH:
 - bedtools >= 2.25 (only for bam to bed conversion)
 - samtools >= 1.0 (only for sam <-> bam conversion)
 - kent source utils >= v323 (only for conversions to or from bigWig/bigBed)
 - sra toolkit >= 2.4.5 (only for sra -> fastq conversion)
 
-## List of functions
+Below is a table of function-by-function dependencies:
 
 |function|from|to|external dependency|
 |--------|----|---|------------------|
