@@ -26,6 +26,8 @@ The following external dependencies should be installed and available in your $P
 - kent source utils >= v323 (only for conversions to or from bigWig/bigBed)
 - sra toolkit >= 2.4.5 (only for sra -> fastq conversion)
 
+Other programs converge uses include several GNU programs that are typically preinstalled in most Linux distributions, including awk, grep, sort, and cut. For older linux distributions, you may need to install a more recent version of GNU core utilities that supports parallelization in `sort`.
+
 Below is a table of function-by-function dependencies:
 
 |function|from|to|external dependency|
