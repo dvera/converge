@@ -1,7 +1,7 @@
 narrowPeakToBed <- function ( narrowPeaks , recenter=FALSE , strand = TRUE , recenteredSize = 100 , threads=getOption("threads",1L) ){
 
 	# make sure input files aren't beds which would cause clobbering
-	if(any(file_ext(narrowPeaks)=="bed"){stop("at least one input file is a bed file")}
+	if(any(file_ext(narrowPeaks)=="bed")){stop("at least one input file is a bed file")}
 
 	numfiles <- length(narrowPeaks)
 
