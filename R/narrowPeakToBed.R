@@ -43,7 +43,7 @@ narrowPeakToBed <- function ( narrowPeaks , recenter=FALSE , strand = TRUE , rec
 		cmdString <- paste("awk '{",midString,"print $1,$2,$3,$4,int($5),$6,$2+$10,$2+$10+1}' OFS='\t' ",narrowPeaks," | sort -k1,1 -k2,2n > ",outnames)
 	}
 
-	res <- cmdRun(cmdString)
+	res <- cmdRun(cmdString,threads=threads)
 
 	return(outnames)
 }
