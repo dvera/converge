@@ -1,9 +1,11 @@
-bigWigToBedGraph <-
-function( datafiles,genomefile){
-	for(l in 1:length(datafiles)){
-		cat(basename(datafiles[l]),": converting to bedGraph\n")
-		outname<-paste(basename(removeext(datafiles[l])),".bg",sep="")
-		system(command=paste("bigWigToBedGraph", datafiles[l], outname))
-		return(outname)
-	}
+bigWigToBedGraph <- function( datafiles, threads=getOption("threads",1L) ){
+
+	outnames<-paste0(basename(removeext(datafiles)),".bg")
+
+	cmdString <- paste("bigWigToBedGraph", datafiles, outnames)
+
+	res <- cmdRun(cmdString,threads=threads)
+
+	return(outnames)
+
 }
