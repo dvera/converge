@@ -6,13 +6,13 @@
 #' @param threads A positive integer specifying how many files to process simultaneously.
 
 bedGraphToBed <-
-function( bgfiles, threads=getOption("threads",1L) ){
+function( bgfiles, scores=TRUE, force=FALSE, threads=getOption("threads",1L) ){
 
 	outnames<-paste0(basename(removeext(bgfiles)),".bed")
 
-	if(any(file.exists(outnames))){stop("files exist already")}
+	if(force & any(file.exists(outnames))){stop("files exist already")}
 
-	cmdString <- paste0( "awk '{print $1,$2,$3,NR,int($4)}' OFS='\t' ",bgfiles," > ",outnames )
+	cmdString <- paste0( "awk '{print $1,$2,$3",if(scores){paste(",NR,int($4)")},"}' OFS='\t' ",bgfiles," > ",outnames )
 
 	cmdRun(cmdString,threads)
 
